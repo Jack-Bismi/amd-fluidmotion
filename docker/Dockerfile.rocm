@@ -1,0 +1,25 @@
+# AMD-FluidMotion -- Docker image for AMD GPUs
+FROM rocm/pytorch:rocm6.1_ubuntu22.04_py3.10_pytorch_2.3.0
+
+LABEL maintainer="Indie Developer"
+LABEL description="Real-Time AI Frame Interpolation & Super-Resolution for AMD GPUs"
+
+RUN apt-get update && apt-get install -y \
+    libopencv-dev \
+    ffmpeg \
+    libavcodec-dev \
+    libavformat-dev \
+    libavutil-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt /tmp/
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+WORKDIR /app
+COPY . .
+RUN pip install -e .
+
+RUN bash scripts/download_models.sh
+
+ENTRYPOINT ["python", "scripts/run_demo.py"]
+CMD ["--help"]
