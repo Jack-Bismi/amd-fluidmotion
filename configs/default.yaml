@@ -1,0 +1,46 @@
+# AMD-FluidMotion -- Default Configuration
+
+device:
+  backend: "rocm"
+  gpu_id: 0
+  precision: "fp16"
+  use_wmma: true
+
+interpolation:
+  flow_model: "pwc_net"
+  fusion_model: "unet_attention"
+  fps_multiplier: 5
+  target_fps: 120
+  motion_threshold: 0.15
+  occlusion_handling: true
+  temporal_smoothing: true
+  smooth_factor: 0.82
+
+super_resolution:
+  enabled: false
+  scale: 2
+  model: "espcn"
+  denoise: false
+  denoise_strength: 0.3
+  anti_ringing: true
+  detail_enhancement: 0.4
+
+pipeline:
+  input_source: "file"
+  input_path: null
+  output_path: "./output/"
+  output_codec: "h264"
+  output_bitrate: "50M"
+  batch_size: 1
+  num_workers: 4
+  prefetch_frames: 8
+  real_time: true
+  max_latency_ms: 12
+  drop_frames_on_lag: true
+
+amd_optimizations:
+  infinity_cache_aware: true
+  wmma_tile_size: 16
+  wavefront_size: 64
+  lds_allocation: "aggressive"
+  numa_aware: false
