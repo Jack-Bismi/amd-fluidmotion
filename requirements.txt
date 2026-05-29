@@ -1,0 +1,33 @@
+# Core
+torch>=2.2.0+rocm5.7
+torchvision>=0.17.0+rocm5.7
+
+# ROCm libraries
+rocblas>=3.1
+miopen>=3.1
+
+# Video processing
+opencv-python>=4.10.0  # 4.9 had memory leak on ROCm
+ffmpeg-python>=0.2.0
+av>=11.0.0
+
+# Image processing
+pillow>=10.4.0
+numpy>=1.26.0
+scipy>=1.12.0
+
+# GUI
+PyQt6>=6.6.0
+pyqtgraph>=0.13.0
+
+# CLI
+click>=8.1.0
+rich>=13.8.0
+tqdm>=4.66.0
+
+# Config
+pyyaml>=6.0
+
+# Dev
+pytest>=8.2.0
+pre-commit>=3.7.0
