@@ -49,3 +49,8 @@ Sure, open an issue or PR. Especially if you have a different AMD GPU than mine 
 ## license
 
 MIT. Do whatever you want with it.
+
+
+## Hardware Tested
+- AMD RX 7800 XT (RDNA3)
+- AMD RX 7900 XTX (RDNA3)
