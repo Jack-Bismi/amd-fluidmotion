@@ -31,3 +31,8 @@ python interpolate.py --input clip.mp4 --output clip_60fps.mp4 --target-fps 60
 - Slow on first run (kernel compilation)
 - 4K clips need a lot of VRAM — 1080p recommended for now
 - Audio sync drifts on clips longer than 90 seconds
+
+
+## Recent Updates
+- Performance improvements for batch processing
+- Better error messages for common issues
