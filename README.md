@@ -36,3 +36,7 @@ python interpolate.py --input clip.mp4 --output clip_60fps.mp4 --target-fps 60
 ## Recent Updates
 - Performance improvements for batch processing
 - Better error messages for common issues
+
+## Troubleshooting
+**Q: Getting OOM errors?**
+A: Reduce batch size or enable gradient checkpointing.
