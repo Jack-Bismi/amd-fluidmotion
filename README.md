@@ -40,3 +40,7 @@ python interpolate.py --input clip.mp4 --output clip_60fps.mp4 --target-fps 60
 ## Troubleshooting
 **Q: Getting OOM errors?**
 A: Reduce batch size or enable gradient checkpointing.
+
+## Hardware Tested
+- AMD RX 7800 XT (RDNA3)
+- AMD RX 7900 XTX (RDNA3)
